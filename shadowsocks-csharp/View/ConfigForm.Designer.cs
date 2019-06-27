@@ -102,7 +102,7 @@
             // DeleteButton
             // 
             this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteButton.BackColor = System.Drawing.SystemColors.Window;
+            this.DeleteButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.DeleteButton.Location = new System.Drawing.Point(130, 0);
             this.DeleteButton.Margin = new System.Windows.Forms.Padding(0);
             this.DeleteButton.Name = "DeleteButton";
@@ -114,7 +114,7 @@
             // 
             // AddButton
             // 
-            this.AddButton.BackColor = System.Drawing.SystemColors.Window;
+            this.AddButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.AddButton.Location = new System.Drawing.Point(0, 0);
             this.AddButton.Margin = new System.Windows.Forms.Padding(0);
             this.AddButton.Name = "AddButton";
@@ -126,6 +126,7 @@
             // 
             // ServersListBox
             // 
+            this.ServersListBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ServersListBox.ItemHeight = 12;
             this.ServersListBox.Location = new System.Drawing.Point(0, 0);
             this.ServersListBox.Margin = new System.Windows.Forms.Padding(0);
@@ -187,7 +188,6 @@
             this.tableLayoutPanel1.Controls.Add(this.EncryptionSelect, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.TextLink, 1, 11);
             this.tableLayoutPanel1.Controls.Add(this.RemarksTextBox, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.ObfsUDPLabel, 0, 16);
             this.tableLayoutPanel1.Controls.Add(this.CheckObfsUDP, 1, 16);
             this.tableLayoutPanel1.Controls.Add(this.TCPProtocolLabel, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.UDPoverTCPLabel, 0, 15);
@@ -209,6 +209,7 @@
             this.tableLayoutPanel1.Controls.Add(this.labelProtocolParam, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.TextProtocolParam, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.IPLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ObfsUDPLabel, 0, 16);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 32);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -238,6 +239,7 @@
             // ObfsCombo
             // 
             this.ObfsCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ObfsCombo.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ObfsCombo.FormattingEnabled = true;
             this.ObfsCombo.Items.AddRange(new object[] {
             "plain",
@@ -257,7 +259,7 @@
             // 
             this.labelObfs.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelObfs.AutoSize = true;
-            this.labelObfs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelObfs.ForeColor = System.Drawing.Color.Blue;
             this.labelObfs.Location = new System.Drawing.Point(73, 180);
             this.labelObfs.Name = "labelObfs";
             this.labelObfs.Size = new System.Drawing.Size(29, 12);
@@ -277,6 +279,7 @@
             // IPTextBox
             // 
             this.IPTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.IPTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.IPTextBox.Location = new System.Drawing.Point(108, 6);
             this.IPTextBox.MaxLength = 512;
             this.IPTextBox.Name = "IPTextBox";
@@ -288,6 +291,8 @@
             // NumServerPort
             // 
             this.NumServerPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.NumServerPort.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.NumServerPort.ForeColor = System.Drawing.SystemColors.WindowText;
             this.NumServerPort.Location = new System.Drawing.Point(108, 33);
             this.NumServerPort.Maximum = new decimal(new int[] {
             65535,
@@ -301,6 +306,7 @@
             // PasswordTextBox
             // 
             this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.PasswordTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.PasswordTextBox.Location = new System.Drawing.Point(108, 60);
             this.PasswordTextBox.MaxLength = 256;
             this.PasswordTextBox.Name = "PasswordTextBox";
@@ -322,6 +328,7 @@
             // EncryptionSelect
             // 
             this.EncryptionSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.EncryptionSelect.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.EncryptionSelect.FormattingEnabled = true;
             this.EncryptionSelect.Location = new System.Drawing.Point(108, 87);
             this.EncryptionSelect.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
@@ -332,6 +339,7 @@
             // TextLink
             // 
             this.TextLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextLink.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.TextLink.Location = new System.Drawing.Point(108, 285);
             this.TextLink.Name = "TextLink";
             this.TextLink.ReadOnly = true;
@@ -344,6 +352,7 @@
             // RemarksTextBox
             // 
             this.RemarksTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.RemarksTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.RemarksTextBox.Location = new System.Drawing.Point(108, 231);
             this.RemarksTextBox.MaxLength = 256;
             this.RemarksTextBox.Name = "RemarksTextBox";
@@ -366,19 +375,20 @@
             // CheckObfsUDP
             // 
             this.CheckObfsUDP.AutoSize = true;
+            this.CheckObfsUDP.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.CheckObfsUDP.Location = new System.Drawing.Point(108, 405);
             this.CheckObfsUDP.Name = "CheckObfsUDP";
             this.CheckObfsUDP.Size = new System.Drawing.Size(126, 16);
             this.CheckObfsUDP.TabIndex = 37;
             this.CheckObfsUDP.Text = "Recommend checked";
-            this.CheckObfsUDP.UseVisualStyleBackColor = true;
+            this.CheckObfsUDP.UseVisualStyleBackColor = false;
             this.CheckObfsUDP.Visible = false;
             // 
             // TCPProtocolLabel
             // 
             this.TCPProtocolLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TCPProtocolLabel.AutoSize = true;
-            this.TCPProtocolLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.TCPProtocolLabel.ForeColor = System.Drawing.Color.Blue;
             this.TCPProtocolLabel.Location = new System.Drawing.Point(49, 123);
             this.TCPProtocolLabel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.TCPProtocolLabel.Name = "TCPProtocolLabel";
@@ -401,12 +411,13 @@
             // CheckUDPoverUDP
             // 
             this.CheckUDPoverUDP.AutoSize = true;
+            this.CheckUDPoverUDP.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.CheckUDPoverUDP.Location = new System.Drawing.Point(108, 383);
             this.CheckUDPoverUDP.Name = "CheckUDPoverUDP";
             this.CheckUDPoverUDP.Size = new System.Drawing.Size(186, 16);
             this.CheckUDPoverUDP.TabIndex = 35;
             this.CheckUDPoverUDP.Text = "UDP over UDP if not checked";
-            this.CheckUDPoverUDP.UseVisualStyleBackColor = true;
+            this.CheckUDPoverUDP.UseVisualStyleBackColor = false;
             this.CheckUDPoverUDP.Visible = false;
             // 
             // LabelNote
@@ -447,17 +458,19 @@
             // CheckTCPoverUDP
             // 
             this.CheckTCPoverUDP.AutoSize = true;
+            this.CheckTCPoverUDP.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.CheckTCPoverUDP.Location = new System.Drawing.Point(108, 361);
             this.CheckTCPoverUDP.Name = "CheckTCPoverUDP";
             this.CheckTCPoverUDP.Size = new System.Drawing.Size(186, 16);
             this.CheckTCPoverUDP.TabIndex = 33;
             this.CheckTCPoverUDP.Text = "TCP over TCP if not checked";
-            this.CheckTCPoverUDP.UseVisualStyleBackColor = true;
+            this.CheckTCPoverUDP.UseVisualStyleBackColor = false;
             this.CheckTCPoverUDP.Visible = false;
             // 
             // TCPProtocolComboBox
             // 
             this.TCPProtocolComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TCPProtocolComboBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.TCPProtocolComboBox.FormattingEnabled = true;
             this.TCPProtocolComboBox.Items.AddRange(new object[] {
             "origin",
@@ -477,7 +490,7 @@
             // 
             this.labelObfsParam.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelObfsParam.AutoSize = true;
-            this.labelObfsParam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelObfsParam.ForeColor = System.Drawing.Color.Blue;
             this.labelObfsParam.Location = new System.Drawing.Point(37, 208);
             this.labelObfsParam.Name = "labelObfsParam";
             this.labelObfsParam.Size = new System.Drawing.Size(65, 12);
@@ -487,6 +500,7 @@
             // TextObfsParam
             // 
             this.TextObfsParam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextObfsParam.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.TextObfsParam.Location = new System.Drawing.Point(108, 204);
             this.TextObfsParam.Name = "TextObfsParam";
             this.TextObfsParam.Size = new System.Drawing.Size(233, 21);
@@ -496,15 +510,16 @@
             // 
             this.labelGroup.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelGroup.AutoSize = true;
-            this.labelGroup.Location = new System.Drawing.Point(67, 262);
+            this.labelGroup.Location = new System.Drawing.Point(43, 262);
             this.labelGroup.Name = "labelGroup";
-            this.labelGroup.Size = new System.Drawing.Size(35, 12);
+            this.labelGroup.Size = new System.Drawing.Size(59, 12);
             this.labelGroup.TabIndex = 24;
-            this.labelGroup.Text = "Group";
+            this.labelGroup.Text = "Group    ";
             // 
             // TextGroup
             // 
             this.TextGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextGroup.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.TextGroup.Location = new System.Drawing.Point(108, 258);
             this.TextGroup.MaxLength = 64;
             this.TextGroup.Name = "TextGroup";
@@ -538,6 +553,7 @@
             // NumUDPPort
             // 
             this.NumUDPPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.NumUDPPort.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.NumUDPPort.Location = new System.Drawing.Point(108, 334);
             this.NumUDPPort.Maximum = new decimal(new int[] {
             65535,
@@ -560,6 +576,7 @@
             this.checkSSRLink.Size = new System.Drawing.Size(72, 16);
             this.checkSSRLink.TabIndex = 26;
             this.checkSSRLink.Text = "SSR Link";
+            this.checkSSRLink.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.checkSSRLink.UseVisualStyleBackColor = true;
             this.checkSSRLink.CheckedChanged += new System.EventHandler(this.checkSSRLink_CheckedChanged);
             // 
@@ -577,7 +594,7 @@
             // 
             this.labelProtocolParam.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelProtocolParam.AutoSize = true;
-            this.labelProtocolParam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelProtocolParam.ForeColor = System.Drawing.Color.Blue;
             this.labelProtocolParam.Location = new System.Drawing.Point(13, 151);
             this.labelProtocolParam.Name = "labelProtocolParam";
             this.labelProtocolParam.Size = new System.Drawing.Size(89, 12);
@@ -587,6 +604,7 @@
             // TextProtocolParam
             // 
             this.TextProtocolParam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextProtocolParam.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.TextProtocolParam.Location = new System.Drawing.Point(108, 147);
             this.TextProtocolParam.Name = "TextProtocolParam";
             this.TextProtocolParam.Size = new System.Drawing.Size(233, 21);
@@ -660,7 +678,7 @@
             // DownButton
             // 
             this.DownButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DownButton.BackColor = System.Drawing.SystemColors.Window;
+            this.DownButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.DownButton.Location = new System.Drawing.Point(130, 34);
             this.DownButton.Margin = new System.Windows.Forms.Padding(0);
             this.DownButton.Name = "DownButton";
@@ -672,7 +690,7 @@
             // 
             // UpButton
             // 
-            this.UpButton.BackColor = System.Drawing.SystemColors.Window;
+            this.UpButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.UpButton.Location = new System.Drawing.Point(0, 34);
             this.UpButton.Margin = new System.Windows.Forms.Padding(0);
             this.UpButton.Name = "UpButton";
@@ -701,7 +719,7 @@
             // PictureQRcode
             // 
             this.PictureQRcode.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PictureQRcode.BackColor = System.Drawing.SystemColors.Control;
+            this.PictureQRcode.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.PictureQRcode.Location = new System.Drawing.Point(4, 135);
             this.PictureQRcode.Margin = new System.Windows.Forms.Padding(4);
             this.PictureQRcode.Name = "PictureQRcode";
@@ -709,6 +727,7 @@
             this.PictureQRcode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.PictureQRcode.TabIndex = 13;
             this.PictureQRcode.TabStop = false;
+            this.PictureQRcode.Click += new System.EventHandler(this.PictureQRcode_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -732,7 +751,7 @@
             // 
             this.MyCancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MyCancelButton.AutoSize = true;
-            this.MyCancelButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.MyCancelButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.MyCancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.MyCancelButton.Location = new System.Drawing.Point(212, 3);
             this.MyCancelButton.Margin = new System.Windows.Forms.Padding(3, 3, 0, 0);
@@ -746,7 +765,7 @@
             // OKButton
             // 
             this.OKButton.AutoSize = true;
-            this.OKButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.OKButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.OKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.OKButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.OKButton.Location = new System.Drawing.Point(3, 3);
@@ -763,7 +782,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(925, 564);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.panel2);

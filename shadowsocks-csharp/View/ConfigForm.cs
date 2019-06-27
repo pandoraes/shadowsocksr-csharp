@@ -801,6 +801,9 @@ namespace Shadowsocks.View
             }
         }
 
+        private void PictureQRcode_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
