@@ -41,7 +41,6 @@ namespace Shadowsocks.View
         private MenuItem ruleBypassChina;
         private MenuItem ruleBypassNotChina;
         private MenuItem ruleUser;
-        private MenuItem ruleDisableBypass;
 
         private MenuItem SeperatorItem;
         private MenuItem ServersItem;
@@ -235,8 +234,6 @@ namespace Shadowsocks.View
                     ruleBypassChina = CreateMenuItem("Bypass LAN && China", new EventHandler(this.RuleBypassChinaItem_Click)),
                     ruleBypassNotChina = CreateMenuItem("Bypass LAN && not China", new EventHandler(this.RuleBypassNotChinaItem_Click)),
                     ruleUser = CreateMenuItem("User custom", new EventHandler(this.RuleUserItem_Click)),
-                    new MenuItem("-"),
-                    ruleDisableBypass = CreateMenuItem("Disable bypass", new EventHandler(this.RuleBypassDisableItem_Click)),
                 }),
                 new MenuItem("-"),
                 ServersItem = CreateMenuGroup("Servers", new MenuItem[] {
@@ -586,7 +583,6 @@ namespace Shadowsocks.View
 
         private void UpdateProxyRule(Configuration config)
         {
-            ruleDisableBypass.Checked = config.proxyRuleMode == (int)ProxyRuleMode.Disable;
             ruleBypassLan.Checked = config.proxyRuleMode == (int)ProxyRuleMode.BypassLan;
             ruleBypassChina.Checked = config.proxyRuleMode == (int)ProxyRuleMode.BypassLanAndChina;
             ruleBypassNotChina.Checked = config.proxyRuleMode == (int)ProxyRuleMode.BypassLanAndNotChina;
@@ -984,11 +980,6 @@ namespace Shadowsocks.View
         private void RuleUserItem_Click(object sender, EventArgs e)
         {
             controller.ToggleRuleMode((int)ProxyRuleMode.UserCustom);
-        }
-
-        private void RuleBypassDisableItem_Click(object sender, EventArgs e)
-        {
-            controller.ToggleRuleMode((int)ProxyRuleMode.Disable);
         }
 
         private void SelectRandomItem_Click(object sender, EventArgs e)

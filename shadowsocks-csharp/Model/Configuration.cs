@@ -36,7 +36,6 @@ namespace Shadowsocks.Model
 
     public enum ProxyRuleMode : int
     {
-        Disable = 0,
         BypassLan,
         BypassLanAndChina,
         BypassLanAndNotChina,

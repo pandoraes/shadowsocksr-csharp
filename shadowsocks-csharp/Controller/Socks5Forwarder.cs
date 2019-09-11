@@ -50,7 +50,7 @@ namespace Shadowsocks.Controller
 
         public int IsHandle(byte[] firstPacket, int length, Socket socket)
         {
-            if (length >= 7 && _config.proxyRuleMode != (int)ProxyRuleMode.Disable)
+            if (length >= 7)
             {
                 IPAddress ipAddress = null;
                 if (firstPacket[0] == 1)

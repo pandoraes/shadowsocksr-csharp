@@ -11,7 +11,6 @@ namespace Shadowsocks.Controller
 {
     public enum ProxyMode
     {
-        NoModify,
         Direct,
         Pac,
         Global,
