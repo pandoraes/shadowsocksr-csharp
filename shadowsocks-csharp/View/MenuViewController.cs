@@ -213,31 +213,33 @@ namespace Shadowsocks.View
             this.contextMenu1 = new ContextMenu(new MenuItem[] {
                 modeItem = CreateMenuGroup("Mode", new MenuItem[] {
                     enableItem = CreateMenuItem("Disable system proxy", new EventHandler(this.EnableItem_Click)),
-                    PACModeItem = CreateMenuItem("PAC", new EventHandler(this.PACModeItem_Click)),
-                    globalModeItem = CreateMenuItem("Global", new EventHandler(this.GlobalModeItem_Click))
-                }),
-                CreateMenuGroup("PAC ", new MenuItem[] {
-                    CreateMenuItem("Update local PAC from Lan IP list", new EventHandler(this.UpdatePACFromLanIPListItem_Click)),
-                    new MenuItem("-"),
-                    CreateMenuItem("Update local PAC from Chn White list", new EventHandler(this.UpdatePACFromCNWhiteListItem_Click)),
-                    CreateMenuItem("Update local PAC from Chn IP list", new EventHandler(this.UpdatePACFromCNIPListItem_Click)),
-                    CreateMenuItem("Update local PAC from GFWList", new EventHandler(this.UpdatePACFromGFWListItem_Click)),
-                    new MenuItem("-"),
-                    CreateMenuItem("Update local PAC from Chn Only list", new EventHandler(this.UpdatePACFromCNOnlyListItem_Click)),
-                    new MenuItem("-"),
-                    CreateMenuItem("Copy PAC URL", new EventHandler(this.CopyPACURLItem_Click)),
-                    CreateMenuItem("Edit local PAC file...", new EventHandler(this.EditPACFileItem_Click)),
-                    CreateMenuItem("Edit user rule for GFWList...", new EventHandler(this.EditUserRuleFileForGFWListItem_Click)),
+                    PACModeItem = CreateMenuItem("Enable PAC", new EventHandler(this.PACModeItem_Click)),
+                    globalModeItem = CreateMenuItem("Enable Global", new EventHandler(this.GlobalModeItem_Click))
                 }),
                 CreateMenuGroup("Proxy rule", new MenuItem[] {
                     ruleBypassLan = CreateMenuItem("Bypass LAN", new EventHandler(this.RuleBypassLanItem_Click)),
                     ruleBypassChina = CreateMenuItem("Bypass LAN && China", new EventHandler(this.RuleBypassChinaItem_Click)),
                     ruleBypassNotChina = CreateMenuItem("Bypass LAN && not China", new EventHandler(this.RuleBypassNotChinaItem_Click)),
                     ruleUser = CreateMenuItem("User custom", new EventHandler(this.RuleUserItem_Click)),
+                    new MenuItem("-"),
+                    CreateMenuGroup("PAC", new MenuItem[] {
+                        CreateMenuItem("Update local PAC from Lan IP list", new EventHandler(this.UpdatePACFromLanIPListItem_Click)),
+                        new MenuItem("-"),
+                        CreateMenuItem("Update local PAC from Chn White list", new EventHandler(this.UpdatePACFromCNWhiteListItem_Click)),
+                        CreateMenuItem("Update local PAC from Chn IP list", new EventHandler(this.UpdatePACFromCNIPListItem_Click)),
+                        CreateMenuItem("Update local PAC from GFWList", new EventHandler(this.UpdatePACFromGFWListItem_Click)),
+                        new MenuItem("-"),
+                        CreateMenuItem("Update local PAC from Chn Only list", new EventHandler(this.UpdatePACFromCNOnlyListItem_Click)),
+                        new MenuItem("-"),
+                        CreateMenuItem("Copy PAC URL", new EventHandler(this.CopyPACURLItem_Click)),
+                        CreateMenuItem("Edit local PAC file...", new EventHandler(this.EditPACFileItem_Click)),
+                        CreateMenuItem("Edit user rule for GFWList...", new EventHandler(this.EditUserRuleFileForGFWListItem_Click)),
+                    }),
                 }),
                 new MenuItem("-"),
                 ServersItem = CreateMenuGroup("Servers", new MenuItem[] {
                     SeperatorItem = new MenuItem("-"),
+                    SelectRandomItem = CreateMenuItem("Load balance", new EventHandler(this.SelectRandomItem_Click)),
                     CreateMenuItem("Edit servers...", new EventHandler(this.Config_Click)),
                     CreateMenuItem("Import servers from file...", new EventHandler(this.Import_Click)),
                     new MenuItem("-"),
@@ -245,28 +247,30 @@ namespace Shadowsocks.View
                     new MenuItem("-"),
                     CreateMenuItem("Server statistic...", new EventHandler(this.ShowServerLogItem_Click)),
                     CreateMenuItem("Disconnect current", new EventHandler(this.DisconnectCurrent_Click)),
+                    CreateMenuGroup("Servers Subscribe", new MenuItem[] {
+                        CreateMenuItem("Subscribe setting...", new EventHandler(this.SubscribeSetting_Click)),
+                        CreateMenuItem("Update subscribe SSR node", new EventHandler(this.CheckNodeUpdate_Click)),
+                        CreateMenuItem("Update subscribe SSR node(bypass proxy)", new EventHandler(this.CheckNodeUpdateBypassProxy_Click)),
+                    }),
                 }),
-                CreateMenuGroup("Servers Subscribe", new MenuItem[] {
-                    CreateMenuItem("Subscribe setting...", new EventHandler(this.SubscribeSetting_Click)),
-                    CreateMenuItem("Update subscribe SSR node", new EventHandler(this.CheckNodeUpdate_Click)),
-                    CreateMenuItem("Update subscribe SSR node(bypass proxy)", new EventHandler(this.CheckNodeUpdateBypassProxy_Click)),
-                }),
-                SelectRandomItem = CreateMenuItem("Load balance", new EventHandler(this.SelectRandomItem_Click)),
-                CreateMenuItem("Global settings...", new EventHandler(this.Setting_Click)),
-                CreateMenuItem("Port settings...", new EventHandler(this.ShowPortMapItem_Click)),
                 UpdateItem = CreateMenuItem("Update available", new EventHandler(this.UpdateItem_Clicked)),
                 new MenuItem("-"),
                 CreateMenuItem("Scan QRCode from screen...", new EventHandler(this.ScanQRCodeItem_Click)),
                 CreateMenuItem("Import SSR links from clipboard...", new EventHandler(this.CopyAddress_Click)),
                 new MenuItem("-"),
-                CreateMenuGroup("Help", new MenuItem[] {
-                    CreateMenuItem("Show logs...", new EventHandler(this.ShowLogItem_Click)),
-                    new MenuItem("-"),
-                    CreateMenuItem("Gen custom QRCode...", new EventHandler(this.showURLFromQRCode)),
-                    CreateMenuItem("Reset password...", new EventHandler(this.ResetPasswordItem_Click)),
-                    new MenuItem("-"),
-                    CreateMenuItem("About...", new EventHandler(this.AboutItem_Click)),
+                CreateMenuGroup("Configure", new MenuItem[] {
+                    CreateMenuItem("Global settings...", new EventHandler(this.Setting_Click)),
+                    CreateMenuItem("Port settings...", new EventHandler(this.ShowPortMapItem_Click)),
+                    CreateMenuGroup("Help", new MenuItem[] {
+                        CreateMenuItem("Show logs...", new EventHandler(this.ShowLogItem_Click)),
+                        new MenuItem("-"),
+                        //CreateMenuItem("Gen custom QRCode...", new EventHandler(this.showURLFromQRCode)),
+                        CreateMenuItem("Reset password...", new EventHandler(this.ResetPasswordItem_Click)),
+                        new MenuItem("-"),
+                        CreateMenuItem("About...", new EventHandler(this.AboutItem_Click)),
+                    }),
                 }),
+
                 CreateMenuItem("Quit", new EventHandler(this.Quit_Click))
             });
             this.UpdateItem.Visible = false;
