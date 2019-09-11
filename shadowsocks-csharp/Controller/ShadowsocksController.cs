@@ -302,7 +302,7 @@ namespace Shadowsocks.Controller
             {
                 polipoRunner.Stop();
             }
-            if (_config.sysProxyMode != (int)ProxyMode.NoModify && _config.sysProxyMode != (int)ProxyMode.Direct)
+            if ( _config.sysProxyMode != (int)ProxyMode.Direct)
             {
                 SystemProxy.Update(_config, true);
             }
@@ -523,10 +523,9 @@ namespace Shadowsocks.Controller
         private void UpdateSystemProxy()
         {
 #if !_CONSOLE
-            if (_config.sysProxyMode != (int)ProxyMode.NoModify)
-            {
-                SystemProxy.Update(_config, false);
-            }
+
+            SystemProxy.Update(_config, false);
+            
 #endif
         }
 

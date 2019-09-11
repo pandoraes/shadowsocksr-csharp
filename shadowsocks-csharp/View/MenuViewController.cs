@@ -32,7 +32,6 @@ namespace Shadowsocks.View
         private NotifyIcon _notifyIcon;
         private ContextMenu contextMenu1;
 
-        private MenuItem noModifyItem;
         private MenuItem enableItem;
         private MenuItem PACModeItem;
         private MenuItem globalModeItem;
@@ -131,7 +130,7 @@ namespace Shadowsocks.View
                 dpi = (int)graphics.DpiX;
             }
             Configuration config = controller.GetCurrentConfiguration();
-            bool enabled = config.sysProxyMode != (int)ProxyMode.NoModify && config.sysProxyMode != (int)ProxyMode.Direct;
+            bool enabled = config.sysProxyMode != (int)ProxyMode.Direct;
             bool global = config.sysProxyMode == (int)ProxyMode.Global;
             bool random = config.random;
 
@@ -216,9 +215,7 @@ namespace Shadowsocks.View
                 modeItem = CreateMenuGroup("Mode", new MenuItem[] {
                     enableItem = CreateMenuItem("Disable system proxy", new EventHandler(this.EnableItem_Click)),
                     PACModeItem = CreateMenuItem("PAC", new EventHandler(this.PACModeItem_Click)),
-                    globalModeItem = CreateMenuItem("Global", new EventHandler(this.GlobalModeItem_Click)),
-                    new MenuItem("-"),
-                    noModifyItem = CreateMenuItem("No modify system proxy", new EventHandler(this.NoModifyItem_Click))
+                    globalModeItem = CreateMenuItem("Global", new EventHandler(this.GlobalModeItem_Click))
                 }),
                 CreateMenuGroup("PAC ", new MenuItem[] {
                     CreateMenuItem("Update local PAC from Lan IP list", new EventHandler(this.UpdatePACFromLanIPListItem_Click)),
@@ -266,16 +263,12 @@ namespace Shadowsocks.View
                 CreateMenuItem("Import SSR links from clipboard...", new EventHandler(this.CopyAddress_Click)),
                 new MenuItem("-"),
                 CreateMenuGroup("Help", new MenuItem[] {
-                    CreateMenuItem("Check update", new EventHandler(this.CheckUpdate_Click)),
                     CreateMenuItem("Show logs...", new EventHandler(this.ShowLogItem_Click)),
-                    CreateMenuItem("Open wiki...", new EventHandler(this.OpenWiki_Click)),
-                    CreateMenuItem("Feedback...", new EventHandler(this.FeedbackItem_Click)),
                     new MenuItem("-"),
                     CreateMenuItem("Gen custom QRCode...", new EventHandler(this.showURLFromQRCode)),
                     CreateMenuItem("Reset password...", new EventHandler(this.ResetPasswordItem_Click)),
                     new MenuItem("-"),
                     CreateMenuItem("About...", new EventHandler(this.AboutItem_Click)),
-                    CreateMenuItem("Donate...", new EventHandler(this.DonateItem_Click)),
                 }),
                 CreateMenuItem("Quit", new EventHandler(this.Quit_Click))
             });
@@ -585,7 +578,7 @@ namespace Shadowsocks.View
 
         private void UpdateSysProxyMode(Configuration config)
         {
-            noModifyItem.Checked = config.sysProxyMode == (int)ProxyMode.NoModify;
+           
             enableItem.Checked = config.sysProxyMode == (int)ProxyMode.Direct;
             PACModeItem.Checked = config.sysProxyMode == (int)ProxyMode.Pac;
             globalModeItem.Checked = config.sysProxyMode == (int)ProxyMode.Global;
@@ -907,16 +900,6 @@ namespace Shadowsocks.View
             Application.Exit();
         }
 
-        private void OpenWiki_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://github.com/breakwa11/shadowsocks-rss/wiki");
-        }
-
-        private void FeedbackItem_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://github.com/shadowsocksr/shadowsocksr-csharp/issues/new");
-        }
-
         private void ResetPasswordItem_Click(object sender, EventArgs e)
         {
             ResetPassword dlg = new ResetPassword();
@@ -926,7 +909,7 @@ namespace Shadowsocks.View
 
         private void AboutItem_Click(object sender, EventArgs e)
         {
-            Process.Start("https://breakwa11.github.io");
+            Process.Start("https://www.ss-o.com");
         }
 
         private void DonateItem_Click(object sender, EventArgs e)
@@ -935,6 +918,7 @@ namespace Shadowsocks.View
         }
 
         [DllImport("user32.dll")]
+
         private static extern short GetAsyncKeyState(System.Windows.Forms.Keys vKey);
 
         private void notifyIcon1_Click(object sender, MouseEventArgs e)
@@ -965,11 +949,6 @@ namespace Shadowsocks.View
             {
                 ShowServerLogForm();
             }
-        }
-
-        private void NoModifyItem_Click(object sender, EventArgs e)
-        {
-            controller.ToggleMode(ProxyMode.NoModify);
         }
 
         private void EnableItem_Click(object sender, EventArgs e)
